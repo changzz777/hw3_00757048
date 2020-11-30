@@ -9,13 +9,29 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        TabView{
+            MainView()
+                .tabItem {
+                    Image(systemName: "u.square")
+                    Text("主頁")
+                }
+            p4p()
+                .tabItem {
+                    Image(systemName: "f.square")
+                    Text("Pound-for-Pound")
+                }
+            mma()
+                .tabItem {
+                    Image(systemName: "c.square")
+                    Text("影視")
+                }
+        }
+        .accentColor(Color(red: 180/255, green: 0, blue: 0))
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().preferredColorScheme(.light)
     }
 }
